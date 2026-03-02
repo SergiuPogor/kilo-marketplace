@@ -95,15 +95,6 @@ items:
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/video-downloader
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/video-downloader/SKILL.md
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/video-downloader.tar.gz
-  - id: artifacts-builder
-    description: >-
-      Suite of tools for creating elaborate, multi-component HTML artifacts using modern frontend web technologies
-      (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui
-      components - not for simple single-file HTML/JSX artifacts.
-    category: development
-    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/artifacts-builder
-    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/artifacts-builder/SKILL.md
-    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/artifacts-builder.tar.gz
   - id: agent-md-refactor
     description: >-
       Refactor bloated AGENTS.md, CLAUDE.md, or similar agent instruction files to follow progressive disclosure
@@ -134,11 +125,10 @@ items:
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/angular-di.tar.gz
   - id: angular-directives
     description: >-
-      Create custom directives in Angular v20+ for DOM manipulation and behavior extension. Use for attribute
-      directives that modify element behavior/appearance, structural directives for portals/overlays, and host
-      directives for composition. Triggers on creating reusable DOM behaviors, extending element functionality, or
-      composing behaviors across components. Note - use native @if/@for/@switch for control flow, not custom structural
-      directives.
+      Create custom directives in Angular v20+ for DOM manipulation and behavior extension. Use for attribute directives
+      that modify element behavior/appearance, structural directives for portals/overlays, and host directives for
+      composition. Triggers on creating reusable DOM behaviors, extending element functionality, or composing behaviors
+      across components. Note - use native @if/@for/@switch for control flow, not custom structural directives.
     category: development
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/angular-directives
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/angular-directives/SKILL.md
@@ -194,9 +184,9 @@ items:
   - id: angular-testing
     description: >-
       Write unit and integration tests for Angular v21+ applications using Vitest or Jasmine with TestBed, component
-      harnesses, and modern testing patterns. Use for testing components with signals, OnPush change detection,
-      services with inject(), and HTTP interactions. Triggers on test creation, testing signal-based components,
-      mocking dependencies, or setting up test infrastructure.
+      harnesses, and modern testing patterns. Use for testing components with signals, OnPush change detection, services
+      with inject(), and HTTP interactions. Triggers on test creation, testing signal-based components, mocking
+      dependencies, or setting up test infrastructure.
     category: development
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/angular-testing
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/angular-testing/SKILL.md
@@ -210,25 +200,15 @@ items:
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/angular-tooling
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/angular-tooling/SKILL.md
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/angular-tooling.tar.gz
-  - id: frontend-design
+  - id: artifacts-builder
     description: >-
-      Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user
-      asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing
-      pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates
-      creative, polished code and UI design that avoids generic AI aesthetics.
+      Suite of tools for creating elaborate, multi-component HTML artifacts using modern frontend web technologies
+      (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui
+      components - not for simple single-file HTML/JSX artifacts.
     category: development
-    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/frontend-design
-    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/frontend-design/SKILL.md
-    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/frontend-design.tar.gz
-  - id: vercel-composition-patterns
-    description: >-
-      React composition patterns that scale. Use when refactoring components with boolean prop proliferation, building
-      flexible component libraries, or designing reusable APIs. Triggers on tasks involving compound components,
-      render props, context providers, or component architecture. Includes React 19 API changes.
-    category: development
-    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/vercel-composition-patterns
-    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/vercel-composition-patterns/SKILL.md
-    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/vercel-composition-patterns.tar.gz
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/artifacts-builder
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/artifacts-builder/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/artifacts-builder.tar.gz
   - id: changelog-generator
     description: >-
       Automatically creates user-facing changelogs from git commits by analyzing commit history, categorizing changes,
@@ -257,6 +237,16 @@ items:
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/figma-implement-design
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/figma-implement-design/SKILL.md
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/figma-implement-design.tar.gz
+  - id: frontend-design
+    description: >-
+      Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user
+      asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing
+      pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates
+      creative, polished code and UI design that avoids generic AI aesthetics.
+    category: development
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/frontend-design
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/frontend-design/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/frontend-design.tar.gz
   - id: langsmith-fetch
     description: >-
       Debug LangChain and LangGraph agents by fetching execution traces from LangSmith Studio. Use when debugging agent
@@ -291,6 +281,15 @@ items:
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/skill-share
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/skill-share/SKILL.md
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/skill-share.tar.gz
+  - id: vercel-composition-patterns
+    description: >-
+      React composition patterns that scale. Use when refactoring components with boolean prop proliferation, building
+      flexible component libraries, or designing reusable APIs. Triggers on tasks involving compound components, render
+      props, context providers, or component architecture. Includes React 19 API changes.
+    category: development
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/vercel-composition-patterns
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/vercel-composition-patterns/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/vercel-composition-patterns.tar.gz
   - id: vercel-deploy
     description: >-
       Deploy applications and websites to Vercel. Use this skill when the user requests deployment actions such as
