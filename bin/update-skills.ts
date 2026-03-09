@@ -25,6 +25,7 @@ const skillsDir = path.join(__dirname, "..", "skills");
 interface SourceInfo {
   repository: string;
   path: string;
+  license_path?: string;
 }
 
 interface SkillInfo {
@@ -70,7 +71,7 @@ function collectSkills(filter?: string[]): SkillInfo[] {
     skills.push({
       name: dir.name,
       dir: path.join(skillsDir, dir.name),
-      source: { repository: source.repository, path: source.path },
+      source: { repository: source.repository, path: source.path, license_path: source.license_path },
       frontmatter,
     });
   }
@@ -188,6 +189,7 @@ function updateFromRepo(repoUrl: string, skills: SkillInfo[]): void {
       newFrontmatter.metadata.source = {
         repository: skill.source.repository,
         path: skill.source.path,
+        ...(skill.source.license_path && { license_path: skill.source.license_path }),
       };
 
       const updatedContent = matter.stringify(body, newFrontmatter);

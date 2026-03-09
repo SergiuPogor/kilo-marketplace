@@ -7,6 +7,7 @@ metadata:
   source:
     repository: https://github.com/softaworks/agent-toolkit
     path: skills/agent-md-refactor
+    license_path: LICENSE
 ---
 
 # Agent MD Refactor
