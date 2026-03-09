@@ -651,7 +651,8 @@ items:
       - Python and uv
     content:
       - name: UVX (dbt Cloud)
-        description: Uses OAuth to authenticate with your dbt Cloud account. Provides platform features (Discovery API, Semantic Layer, job management) without local CLI commands.
+        description: Uses OAuth to authenticate with your dbt Cloud account. Provides platform features (Discovery API, Semantic
+          Layer, job management) without local CLI commands.
         prerequisites:
           - dbt Cloud account with static subdomain
         content: |
@@ -663,7 +664,8 @@ items:
             }
           }
       - name: UVX (dbt Cloud + CLI)
-        description: Uses OAuth with dbt Cloud and also enables local dbt CLI commands for running, building, and testing dbt projects.
+        description: Uses OAuth with dbt Cloud and also enables local dbt CLI commands for running, building, and testing dbt
+          projects.
         prerequisites:
           - dbt Cloud account with static subdomain
           - dbt CLI installed locally
@@ -705,12 +707,13 @@ items:
             key: DBT_PATH
             placeholder: /path/to/your/dbt/executable
       - name: Docker
-        description: Container-based installation using a dbt Cloud service token for authentication. Provides platform features without local dbt installation.
+        description: Container-based installation using a dbt Cloud service token for authentication. Provides platform features
+          without local dbt installation.
         prerequisites:
           - Docker
           - dbt Cloud account
           - dbt Cloud service token
-        content: |
+        content: >
           {
             "command": "docker",
             "args": ["run", "-i", "--rm", "-e", "DBT_HOST", "-e", "DBT_TOKEN", "-e", "DBT_PROD_ENV_ID", "ghcr.io/dbt-labs/dbt-mcp:latest"],
