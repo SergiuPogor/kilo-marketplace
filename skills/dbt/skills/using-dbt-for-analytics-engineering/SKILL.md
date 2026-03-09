@@ -1,18 +1,10 @@
 ---
 name: using-dbt-for-analytics-engineering
-description: >-
-  Builds and modifies dbt models, writes SQL transformations using ref() and
-  source(), creates tests, and validates results with dbt show. Use when doing
-  any dbt work - building or modifying models, debugging errors, exploring
-  unfamiliar data sources, writing tests, or evaluating impact of changes.
-allowed-tools: 'Bash(dbt *), Bash(jq *), Read, Write, Edit, Glob, Grep'
+description: Builds and modifies dbt models, writes SQL transformations using ref() and source(), creates tests, and validates results with dbt show. Use when doing any dbt work - building or modifying models, debugging errors, exploring unfamiliar data sources, writing tests, or evaluating impact of changes.
+allowed-tools: "Bash(dbt *), Bash(jq *), Read, Write, Edit, Glob, Grep"
 user-invocable: false
 metadata:
   author: dbt-labs
-  category: development
-  source:
-    repository: 'https://github.com/dbt-labs/dbt-agent-skills'
-    path: skills/dbt/skills/using-dbt-for-analytics-engineering
 ---
 
 # Using dbt for Analytics Engineering

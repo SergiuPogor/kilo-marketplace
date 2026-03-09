@@ -1,18 +1,9 @@
 ---
 name: answering-natural-language-questions-with-dbt
-description: >-
-  Writes and executes SQL queries against the data warehouse using dbt's
-  Semantic Layer or ad-hoc SQL to answer business questions. Use when a user
-  asks about analytics, metrics, KPIs, or data (e.g., "What were total sales
-  last quarter?", "Show me top customers by revenue"). NOT for validating,
-  testing, or building dbt models during development.
+description: Writes and executes SQL queries against the data warehouse using dbt's Semantic Layer or ad-hoc SQL to answer business questions. Use when a user asks about analytics, metrics, KPIs, or data (e.g., "What were total sales last quarter?", "Show me top customers by revenue"). NOT for validating, testing, or building dbt models during development.
 user-invocable: false
 metadata:
   author: dbt-labs
-  category: development
-  source:
-    repository: 'https://github.com/dbt-labs/dbt-agent-skills'
-    path: skills/dbt/skills/answering-natural-language-questions-with-dbt
 ---
 
 # Answering Natural Language Questions with dbt

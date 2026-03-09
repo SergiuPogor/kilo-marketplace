@@ -1,18 +1,9 @@
 ---
 name: troubleshooting-dbt-job-errors
-description: >-
-  Diagnoses dbt Cloud/platform job failures by analyzing run logs, querying the
-  Admin API, reviewing git history, and investigating data issues. Use when a
-  dbt Cloud/platform job fails and you need to diagnose the root cause,
-  especially when error messages are unclear or when intermittent failures
-  occur. Do not use for local dbt development errors.
+description: Diagnoses dbt Cloud/platform job failures by analyzing run logs, querying the Admin API, reviewing git history, and investigating data issues. Use when a dbt Cloud/platform job fails and you need to diagnose the root cause, especially when error messages are unclear or when intermittent failures occur. Do not use for local dbt development errors.
 user-invocable: false
 metadata:
   author: dbt-labs
-  category: development
-  source:
-    repository: 'https://github.com/dbt-labs/dbt-agent-skills'
-    path: skills/dbt/skills/troubleshooting-dbt-job-errors
 ---
 
 # Troubleshooting dbt Job Errors

@@ -1,20 +1,10 @@
 ---
 name: migrating-dbt-core-to-fusion
-description: >-
-  Classifies dbt-core to Fusion migration errors into actionable categories
-  (auto-fixable, guided fixes, needs input, blocked). Use when a user needs help
-  triaging migration errors to understand what they can fix vs what requires
-  Fusion engine updates.
-allowed-tools: >-
-  Bash(dbt:*), Bash(git:*), Bash(uvx:*), Read, Write, Edit, Glob, Grep,
-  WebFetch(domain:api.github.com)
-compatibility: dbt Fusion
+description: Classifies dbt-core to Fusion migration errors into actionable categories (auto-fixable, guided fixes, needs input, blocked). Use when a user needs help triaging migration errors to understand what they can fix vs what requires Fusion engine updates.
+allowed-tools: "Bash(dbt:*), Bash(git:*), Bash(uvx:*), Read, Write, Edit, Glob, Grep, WebFetch(domain:api.github.com)"
+compatibility: "dbt Fusion"
 metadata:
   author: dbt-labs
-  category: development
-  source:
-    repository: 'https://github.com/dbt-labs/dbt-agent-skills'
-    path: skills/dbt-migration/skills/migrating-dbt-core-to-fusion
 ---
 
 # Fusion Migration Triage Assistant

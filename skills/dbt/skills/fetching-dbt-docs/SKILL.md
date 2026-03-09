@@ -1,16 +1,9 @@
 ---
 name: fetching-dbt-docs
-description: >-
-  Retrieves and searches dbt documentation pages in LLM-friendly markdown
-  format. Use when fetching dbt documentation, looking up dbt features, or
-  answering questions about dbt Cloud, dbt Core, or the dbt Semantic Layer.
+description: Retrieves and searches dbt documentation pages in LLM-friendly markdown format. Use when fetching dbt documentation, looking up dbt features, or answering questions about dbt Cloud, dbt Core, or the dbt Semantic Layer.
 user-invocable: false
 metadata:
   author: dbt-labs
-  category: development
-  source:
-    repository: 'https://github.com/dbt-labs/dbt-agent-skills'
-    path: skills/dbt/skills/fetching-dbt-docs
 ---
 
 # Fetch dbt Docs

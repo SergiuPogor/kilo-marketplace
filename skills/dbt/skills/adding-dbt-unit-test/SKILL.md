@@ -1,16 +1,9 @@
 ---
 name: adding-dbt-unit-test
-description: >-
-  Creates unit test YAML definitions that mock upstream model inputs and
-  validate expected outputs. Use when adding unit tests for a dbt model or
-  practicing test-driven development (TDD) in dbt.
+description: Creates unit test YAML definitions that mock upstream model inputs and validate expected outputs. Use when adding unit tests for a dbt model or practicing test-driven development (TDD) in dbt.
 user-invocable: false
 metadata:
   author: dbt-labs
-  category: development
-  source:
-    repository: 'https://github.com/dbt-labs/dbt-agent-skills'
-    path: skills/dbt/skills/adding-dbt-unit-test
 ---
 
 # Add unit test for a dbt model

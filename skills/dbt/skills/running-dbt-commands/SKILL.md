@@ -1,17 +1,9 @@
 ---
 name: running-dbt-commands
-description: >-
-  Formats and executes dbt CLI commands, selects the correct dbt executable, and
-  structures command parameters. Use when running models, tests, builds,
-  compiles, or show queries via dbt CLI. Use when unsure which dbt executable to
-  use or how to format command parameters.
+description: Formats and executes dbt CLI commands, selects the correct dbt executable, and structures command parameters. Use when running models, tests, builds, compiles, or show queries via dbt CLI. Use when unsure which dbt executable to use or how to format command parameters.
 user-invocable: false
 metadata:
   author: dbt-labs
-  category: development
-  source:
-    repository: 'https://github.com/dbt-labs/dbt-agent-skills'
-    path: skills/dbt/skills/running-dbt-commands
 ---
 
 # Running dbt Commands
