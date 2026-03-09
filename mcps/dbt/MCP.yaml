@@ -1,0 +1,94 @@
+id: dbt
+name: dbt
+description: A MCP server for interacting with dbt, providing AI agents with context from dbt Core, dbt Fusion, and dbt
+  Platform. Supports SQL execution, Semantic Layer queries, project discovery, dbt CLI operations, Admin API management,
+  code generation, and column-level lineage tracing.
+author: dbt-labs
+url: https://github.com/dbt-labs/dbt-mcp
+tags:
+  - dbt
+  - data-engineering
+  - data-analytics
+  - sql
+  - semantic-layer
+  - data-modeling
+  - mcp-server
+  - llm
+prerequisites:
+  - dbt Cloud account (for platform features)
+  - dbt Cloud service token
+content:
+  - name: UVX
+    prerequisites:
+      - Python and uv
+    content: |
+      {
+        "command": "uvx",
+        "args": ["dbt-mcp"],
+        "env": {
+          "DBT_HOST": "{{DBT_HOST}}",
+          "DBT_TOKEN": "{{DBT_TOKEN}}",
+          "DBT_PROD_ENV_ID": "{{DBT_PROD_ENV_ID}}",
+          "DBT_DEV_ENV_ID": "{{DBT_DEV_ENV_ID}}",
+          "DBT_USER_ID": "{{DBT_USER_ID}}"
+        }
+      }
+  - name: UVX with Local dbt Project
+    prerequisites:
+      - Python and uv
+      - dbt CLI installed locally
+    content: |
+      {
+        "command": "uvx",
+        "args": ["dbt-mcp"],
+        "env": {
+          "DBT_HOST": "{{DBT_HOST}}",
+          "DBT_TOKEN": "{{DBT_TOKEN}}",
+          "DBT_PROD_ENV_ID": "{{DBT_PROD_ENV_ID}}",
+          "DBT_DEV_ENV_ID": "{{DBT_DEV_ENV_ID}}",
+          "DBT_USER_ID": "{{DBT_USER_ID}}",
+          "DBT_PROJECT_DIR": "{{DBT_PROJECT_DIR}}",
+          "DBT_PATH": "{{DBT_PATH}}"
+        }
+      }
+    parameters:
+      - name: dbt Project Directory
+        key: DBT_PROJECT_DIR
+        placeholder: /path/to/your/dbt/project
+      - name: dbt Executable Path
+        key: DBT_PATH
+        placeholder: /path/to/your/dbt/executable
+        optional: true
+  - name: Docker
+    prerequisites:
+      - Docker
+    content: >
+      {
+        "command": "docker",
+        "args": ["run", "-i", "--rm", "-e", "DBT_HOST", "-e", "DBT_TOKEN", "-e", "DBT_PROD_ENV_ID", "-e", "DBT_DEV_ENV_ID", "-e", "DBT_USER_ID", "ghcr.io/dbt-labs/dbt-mcp:latest"],
+        "env": {
+          "DBT_HOST": "{{DBT_HOST}}",
+          "DBT_TOKEN": "{{DBT_TOKEN}}",
+          "DBT_PROD_ENV_ID": "{{DBT_PROD_ENV_ID}}",
+          "DBT_DEV_ENV_ID": "{{DBT_DEV_ENV_ID}}",
+          "DBT_USER_ID": "{{DBT_USER_ID}}"
+        }
+      }
+parameters:
+  - name: dbt Host
+    key: DBT_HOST
+    placeholder: cloud.getdbt.com
+  - name: dbt Service Token
+    key: DBT_TOKEN
+    placeholder: your_dbt_service_token
+  - name: dbt Production Environment ID
+    key: DBT_PROD_ENV_ID
+    placeholder: your_production_environment_id
+  - name: dbt Development Environment ID
+    key: DBT_DEV_ENV_ID
+    placeholder: your_development_environment_id
+    optional: true
+  - name: dbt User ID
+    key: DBT_USER_ID
+    placeholder: your_user_id
+    optional: true
