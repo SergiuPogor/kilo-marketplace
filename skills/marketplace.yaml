@@ -95,6 +95,14 @@ items:
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/video-downloader
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/video-downloader/SKILL.md
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/video-downloader.tar.gz
+  - id: adding-dbt-unit-test
+    description: >-
+      Creates unit test YAML definitions that mock upstream model inputs and validate expected outputs. Use when adding
+      unit tests for a dbt model or practicing test-driven development (TDD) in dbt.
+    category: development
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/adding-dbt-unit-test
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/adding-dbt-unit-test/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/adding-dbt-unit-test.tar.gz
   - id: agent-md-refactor
     description: >-
       Refactor bloated AGENTS.md, CLAUDE.md, or similar agent instruction files to follow progressive disclosure
@@ -200,6 +208,16 @@ items:
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/angular-tooling
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/angular-tooling/SKILL.md
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/angular-tooling.tar.gz
+  - id: answering-natural-language-questions-with-dbt
+    description: >-
+      Writes and executes SQL queries against the data warehouse using dbt's Semantic Layer or ad-hoc SQL to answer
+      business questions. Use when a user asks about analytics, metrics, KPIs, or data (e.g., "What were total sales
+      last quarter?", "Show me top customers by revenue"). NOT for validating, testing, or building dbt models during
+      development.
+    category: development
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/answering-natural-language-questions-with-dbt
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/answering-natural-language-questions-with-dbt/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/answering-natural-language-questions-with-dbt.tar.gz
   - id: artifacts-builder
     description: >-
       Suite of tools for creating elaborate, multi-component HTML artifacts using modern frontend web technologies
@@ -209,6 +227,15 @@ items:
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/artifacts-builder
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/artifacts-builder/SKILL.md
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/artifacts-builder.tar.gz
+  - id: building-dbt-semantic-layer
+    description: >-
+      Use when creating or modifying dbt Semantic Layer components — semantic models, metrics, dimensions, entities,
+      measures, or time spines. Covers MetricFlow configuration, metric types (simple, derived, cumulative, ratio,
+      conversion), and validation for both latest and legacy YAML specs.
+    category: development
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/building-dbt-semantic-layer
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/building-dbt-semantic-layer/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/building-dbt-semantic-layer.tar.gz
   - id: changelog-generator
     description: >-
       Automatically creates user-facing changelogs from git commits by analyzing commit history, categorizing changes,
@@ -218,6 +245,15 @@ items:
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/changelog-generator
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/changelog-generator/SKILL.md
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/changelog-generator.tar.gz
+  - id: configuring-dbt-mcp-server
+    description: >-
+      Generates MCP server configuration JSON, resolves authentication setup, and validates server connectivity for dbt.
+      Use when setting up, configuring, or troubleshooting the dbt MCP server for AI tools like Claude Desktop, Claude
+      Code, Cursor, or VS Code.
+    category: development
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/configuring-dbt-mcp-server
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/configuring-dbt-mcp-server/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/configuring-dbt-mcp-server.tar.gz
   - id: create-pull-request
     description: >-
       Create a GitHub pull request following project conventions. Use when the user asks to create a PR, submit changes
@@ -227,6 +263,15 @@ items:
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/create-pull-request
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/create-pull-request/SKILL.md
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/create-pull-request.tar.gz
+  - id: fetching-dbt-docs
+    description: >-
+      Retrieves and searches dbt documentation pages in LLM-friendly markdown format. Use when fetching dbt
+      documentation, looking up dbt features, or answering questions about dbt Cloud, dbt Core, or the dbt Semantic
+      Layer.
+    category: development
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/fetching-dbt-docs
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/fetching-dbt-docs/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/fetching-dbt-docs.tar.gz
   - id: figma-implement-design
     description: >-
       Translate Figma nodes into production-ready code with 1:1 visual fidelity using the Figma MCP workflow (design
@@ -265,6 +310,33 @@ items:
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/mcp-builder
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/mcp-builder/SKILL.md
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/mcp-builder.tar.gz
+  - id: migrating-dbt-core-to-fusion
+    description: >-
+      Classifies dbt-core to Fusion migration errors into actionable categories (auto-fixable, guided fixes, needs
+      input, blocked). Use when a user needs help triaging migration errors to understand what they can fix vs what
+      requires Fusion engine updates.
+    category: development
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/migrating-dbt-core-to-fusion
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/migrating-dbt-core-to-fusion/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/migrating-dbt-core-to-fusion.tar.gz
+  - id: migrating-dbt-project-across-platforms
+    description: >-
+      Use when migrating a dbt project from one data platform or data warehouse to another (e.g., Snowflake to
+      Databricks, Databricks to Snowflake) using dbt Fusion's real-time compilation to identify and fix SQL dialect
+      differences.
+    category: development
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/migrating-dbt-project-across-platforms
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/migrating-dbt-project-across-platforms/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/migrating-dbt-project-across-platforms.tar.gz
+  - id: running-dbt-commands
+    description: >-
+      Formats and executes dbt CLI commands, selects the correct dbt executable, and structures command parameters. Use
+      when running models, tests, builds, compiles, or show queries via dbt CLI. Use when unsure which dbt executable to
+      use or how to format command parameters.
+    category: development
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/running-dbt-commands
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/running-dbt-commands/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/running-dbt-commands.tar.gz
   - id: skill-creator
     description: >-
       Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an
@@ -281,6 +353,25 @@ items:
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/skill-share
     rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/skill-share/SKILL.md
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/skill-share.tar.gz
+  - id: troubleshooting-dbt-job-errors
+    description: >-
+      Diagnoses dbt Cloud/platform job failures by analyzing run logs, querying the Admin API, reviewing git history,
+      and investigating data issues. Use when a dbt Cloud/platform job fails and you need to diagnose the root cause,
+      especially when error messages are unclear or when intermittent failures occur. Do not use for local dbt
+      development errors.
+    category: development
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/troubleshooting-dbt-job-errors
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/troubleshooting-dbt-job-errors/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/troubleshooting-dbt-job-errors.tar.gz
+  - id: using-dbt-for-analytics-engineering
+    description: >-
+      Builds and modifies dbt models, writes SQL transformations using ref() and source(), creates tests, and validates
+      results with dbt show. Use when doing any dbt work - building or modifying models, debugging errors, exploring
+      unfamiliar data sources, writing tests, or evaluating impact of changes.
+    category: development
+    githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/using-dbt-for-analytics-engineering
+    rawUrl: https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills/using-dbt-for-analytics-engineering/SKILL.md
+    content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/using-dbt-for-analytics-engineering.tar.gz
   - id: vercel-composition-patterns
     description: >-
       React composition patterns that scale. Use when refactoring components with boolean prop proliferation, building
