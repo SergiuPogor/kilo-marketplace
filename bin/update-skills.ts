@@ -114,14 +114,20 @@ function updateFromRepo(repoUrl: string, skills: SkillInfo[]): void {
       stdio: "pipe",
     });
 
-    // Write all skill paths into the sparse-checkout file
+    // Write all skill paths (and any license paths) into the sparse-checkout file
     const sparseCheckoutFile = path.join(
       tempDir,
       ".git",
       "info",
       "sparse-checkout",
     );
-    const paths = skills.map((s) => s.source.path).join("\n") + "\n";
+    const pathSet = new Set(skills.map((s) => s.source.path));
+    for (const s of skills) {
+      if (s.source.license_path) {
+        pathSet.add(s.source.license_path);
+      }
+    }
+    const paths = [...pathSet].join("\n") + "\n";
     fs.writeFileSync(sparseCheckoutFile, paths);
 
     // Fetch and checkout
@@ -194,6 +200,19 @@ function updateFromRepo(repoUrl: string, skills: SkillInfo[]): void {
 
       const updatedContent = matter.stringify(body, newFrontmatter);
       fs.writeFileSync(newSkillMdPath, updatedContent);
+
+      // Copy LICENSE from the configured license_path (repo-root-relative) if it exists
+      if (skill.source.license_path) {
+        const licenseSrc = path.join(tempDir, skill.source.license_path);
+        if (fs.existsSync(licenseSrc)) {
+          const licenseDest = path.join(skill.dir, "LICENSE");
+          fs.copyFileSync(licenseSrc, licenseDest);
+        } else {
+          console.warn(
+            `  ⚠ ${skill.name}: license_path "${skill.source.license_path}" not found in ${repoUrl}`,
+          );
+        }
+      }
 
       console.log(`  ✓ ${skill.name}`);
     }
