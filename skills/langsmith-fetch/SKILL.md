@@ -477,7 +477,7 @@ langsmith-fetch traces --limit 10 --include-metadata
 
 ---
 
-## Notes for Claude
+## Notes for Kilo
 
 - Always check if `langsmith-fetch` is installed before running commands
 - Verify environment variables are set
