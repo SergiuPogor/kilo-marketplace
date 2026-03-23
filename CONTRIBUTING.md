@@ -123,7 +123,6 @@ Every contributed skill in the marketplace must have a `metadata.source` section
 name: my-skill
 description: >-
   A clear description of what this skill does and when to use it.
-license: MIT
 metadata:
   category: development
   author: your-github-username
@@ -138,9 +137,7 @@ metadata:
 |-------|----------|-------------|
 | `metadata.source.repository` | **Yes** (for contributed skills) | URL to the GitHub repository containing your skill |
 | `metadata.source.path` | **Yes** (for contributed skills) | Path within the repository to the skill directory |
-| `metadata.source.license_path` | Yes* | Path to the LICENSE file in the source repo (alternative to top-level `license`) |
-
-> \* Either a top-level `license` field (SPDX identifier) or `metadata.source.license_path` is required, not both.
+| `metadata.source.license_path` | **Yes** (for contributed skills) | Path to the LICENSE file in the source repo |
 
 ### Real-World Examples
 
@@ -165,7 +162,6 @@ metadata:
 ---
 name: frontend-design
 description: Create distinctive, production-grade frontend interfaces...
-license: Complete terms in LICENSE.txt
 metadata:
   category: development
   source:
