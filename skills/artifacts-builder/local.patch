@@ -1,6 +1,6 @@
 diff -ruN a/artifacts-builder/SKILL.md b/artifacts-builder/SKILL.md
---- a/artifacts-builder/SKILL.md	2026-03-16 12:13:58
-+++ b/artifacts-builder/SKILL.md	2026-03-16 12:13:49
+--- a/artifacts-builder/SKILL.md	2026-04-07 14:51:41
++++ b/artifacts-builder/SKILL.md	2026-04-07 14:50:09
 @@ -1,7 +1,7 @@
  ---
  name: artifacts-builder
@@ -29,8 +29,8 @@ diff -ruN a/artifacts-builder/SKILL.md b/artifacts-builder/SKILL.md
  **Requirements**: Your project must have an `index.html` in the root directory.
  
 diff -ruN a/artifacts-builder/scripts/bundle-artifact.sh b/artifacts-builder/scripts/bundle-artifact.sh
---- a/artifacts-builder/scripts/bundle-artifact.sh	2026-03-16 12:13:58
-+++ b/artifacts-builder/scripts/bundle-artifact.sh	2026-03-16 12:13:49
+--- a/artifacts-builder/scripts/bundle-artifact.sh	2026-04-07 14:51:41
++++ b/artifacts-builder/scripts/bundle-artifact.sh	2026-04-07 14:50:09
 @@ -50,5 +50,5 @@
  echo "✅ Bundle complete!"
  echo "📄 Output: bundle.html ($FILE_SIZE)"

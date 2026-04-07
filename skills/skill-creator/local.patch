@@ -1,6 +1,6 @@
 diff -ruN a/skill-creator/SKILL.md b/skill-creator/SKILL.md
---- a/skill-creator/SKILL.md	2026-04-07 14:34:37
-+++ b/skill-creator/SKILL.md	2026-04-07 14:32:31
+--- a/skill-creator/SKILL.md	2026-04-07 14:51:41
++++ b/skill-creator/SKILL.md	2026-04-07 14:50:09
 @@ -2,7 +2,7 @@
  name: skill-creator
  description: >-
@@ -93,8 +93,8 @@ diff -ruN a/skill-creator/SKILL.md b/skill-creator/SKILL.md
  ### Step 5: Packaging a Skill
  
 diff -ruN a/skill-creator/scripts/init_skill.py b/skill-creator/scripts/init_skill.py
---- a/skill-creator/scripts/init_skill.py	2026-04-07 14:34:37
-+++ b/skill-creator/scripts/init_skill.py	2026-04-07 14:34:16
+--- a/skill-creator/scripts/init_skill.py	2026-04-07 14:51:41
++++ b/skill-creator/scripts/init_skill.py	2026-04-07 14:50:09
 @@ -75,20 +75,20 @@
  
  **Appropriate for:** Python scripts, shell scripts, or any executable code that performs automation, data processing, or specific operations.

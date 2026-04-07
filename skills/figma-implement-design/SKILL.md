@@ -26,7 +26,7 @@ This skill provides a structured workflow for translating Figma designs into pro
 - If the user asks to create/edit/delete nodes inside Figma itself, switch to [figma-use](../figma-use/SKILL.md).
 - If the user asks to build or update a full-page screen in Figma from code or a description, switch to [figma-generate-design](../figma-generate-design/SKILL.md).
 - If the user asks only for Code Connect mappings, switch to [figma-code-connect-components](../figma-code-connect-components/SKILL.md).
-- If the user asks to author reusable agent rules (`CLAUDE.md`/`AGENTS.md`), switch to [figma-create-design-system-rules](../figma-create-design-system-rules/SKILL.md).
+- If the user asks to author reusable agent rules, switch to [figma-create-design-system-rules](../figma-create-design-system-rules/SKILL.md).
 
 ## Prerequisites
 
@@ -58,7 +58,7 @@ The Figma MCP server runs locally via the Figma Desktop app. Ensure the Figma De
 }
 ```
 
-**VS Code Extension:** Open Kilo Code Settings > Agent Behaviour > MCP Servers, then click "Edit Global MCP" (or "Edit Project MCP" for project-specific config) and add the config above.
+**VS Code Extension:** Open Kilo Settings > Agent Behaviour > MCP Servers, then click "Edit Global MCP" (or "Edit Project MCP" for project-specific config) and add the config above.
 
 **CLI:** Add the `mcp` block to your `kilo.json` config file. Config locations:
 - **Global:** `~/.config/kilo/kilo.json`
@@ -66,7 +66,7 @@ The Figma MCP server runs locally via the Figma Desktop app. Ensure the Figma De
 
 Project-level configuration takes precedence over global settings.
 
-After adding the server, restart Kilo Code so it can connect to the Figma MCP server, then continue with Step 1.
+After adding the server, restart Kilo so it can connect to the Figma MCP server, then continue with Step 1.
 
 ### Step 1: Get Node ID
 

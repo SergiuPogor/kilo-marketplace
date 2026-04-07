@@ -1,12 +1,12 @@
 diff -ruN a/meeting-insights-analyzer/SKILL.md b/meeting-insights-analyzer/SKILL.md
---- a/meeting-insights-analyzer/SKILL.md	2026-04-07 14:34:37
-+++ b/meeting-insights-analyzer/SKILL.md	2026-04-07 14:32:31
+--- a/meeting-insights-analyzer/SKILL.md	2026-04-07 14:51:41
++++ b/meeting-insights-analyzer/SKILL.md	2026-04-07 14:51:28
 @@ -54,7 +54,7 @@
  ### Basic Setup
  
  1. Download your meeting transcripts to a folder (e.g., `~/meetings/`)
 -2. Navigate to that folder in Claude Code
-+2. Navigate to that folder in Kilo Code
++2. Navigate to that folder in Kilo
  3. Ask for the analysis you want
  
  ### Quick Start Examples
@@ -15,7 +15,7 @@ diff -ruN a/meeting-insights-analyzer/SKILL.md b/meeting-insights-analyzer/SKILL
  - Granola auto-transcribes your meetings
  - Export transcripts to a folder: [Instructions on how]
 -- Point Claude Code to that folder
-+- Point Kilo Code to that folder
++- Point Kilo to that folder
  
  **From Zoom**:
  - Enable cloud recording with transcription
@@ -24,7 +24,7 @@ diff -ruN a/meeting-insights-analyzer/SKILL.md b/meeting-insights-analyzer/SKILL
  - Use Google Docs auto-transcription
  - Save transcript docs to a folder
 -- Download as .txt files or give Claude Code access
-+- Download as .txt files or give Kilo Code access
++- Download as .txt files or give Kilo access
  
  **From Fireflies.ai, Otter.ai, etc.**:
  - Export transcripts in bulk
