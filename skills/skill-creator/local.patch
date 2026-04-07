@@ -114,9 +114,18 @@ diff -ruN a/skill-creator/scripts/init_skill.py b/skill-creator/scripts/init_ski
 -**Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information that Claude should reference while working.
 +**Appropriate for:** In-depth documentation, API references, database schemas, comprehensive guides, or any detailed information to reference while working.
  
- ### assets/
+### assets/
 -Files not intended to be loaded into context, but rather used within the output Claude produces.
 +Files not intended to be loaded into context, but rather used within the output the agent produces.
- 
+
  **Examples from other skills:**
- - Brand styling: PowerPoint template files (.pptx), logo files
+  - Brand styling: PowerPoint template files (.pptx), logo files
+
+--- a/skill-creator/scripts/init_skill.py
++++ b/skill-creator/scripts/init_skill.py
+@@ -165,7 +165,7 @@
+ the output the agent produces.
+ 
+ Asset files are NOT intended to be loaded into context, but rather used within
+-the output Claude produces.
++the output the agent produces.
