@@ -1,5 +1,5 @@
 diff -ruN a/dbt/.claude-plugin/plugin.json b/dbt/.claude-plugin/plugin.json
---- a/dbt/.claude-plugin/plugin.json	2026-04-07 14:51:44
+--- a/dbt/.claude-plugin/plugin.json	2026-04-07 15:48:28
 +++ b/dbt/.claude-plugin/plugin.json	1970-01-01 01:00:00
 @@ -1,12 +0,0 @@
 -{
@@ -15,7 +15,7 @@ diff -ruN a/dbt/.claude-plugin/plugin.json b/dbt/.claude-plugin/plugin.json
 -  "keywords": ["dbt", "analytics-engineering", "data-modeling", "semantic-layer", "testing"]
 -}
 diff -ruN a/dbt/.cursor-plugin/plugin.json b/dbt/.cursor-plugin/plugin.json
---- a/dbt/.cursor-plugin/plugin.json	2026-04-07 14:51:44
+--- a/dbt/.cursor-plugin/plugin.json	2026-04-07 15:48:28
 +++ b/dbt/.cursor-plugin/plugin.json	1970-01-01 01:00:00
 @@ -1,14 +0,0 @@
 -{
@@ -84,8 +84,42 @@ diff -ruN a/dbt/SKILL.md b/dbt/SKILL.md
 +- **License**: Apache-2.0
 +- **Author**: dbt Labs
 diff -ruN a/dbt/skills/configuring-dbt-mcp-server/SKILL.md b/dbt/skills/configuring-dbt-mcp-server/SKILL.md
---- a/dbt/skills/configuring-dbt-mcp-server/SKILL.md	2026-04-07 14:51:44
-+++ b/dbt/skills/configuring-dbt-mcp-server/SKILL.md	2026-03-23 10:36:55
+--- a/dbt/skills/configuring-dbt-mcp-server/SKILL.md	2026-04-07 15:48:28
++++ b/dbt/skills/configuring-dbt-mcp-server/SKILL.md	2026-04-07 15:48:12
+@@ -1,6 +1,6 @@
+ ---
+ name: configuring-dbt-mcp-server
+-description: Generates MCP server configuration JSON, resolves authentication setup, and validates server connectivity for dbt. Use when setting up, configuring, or troubleshooting the dbt MCP server for AI tools like Claude Desktop, Claude Code, Cursor, or VS Code.
++description: Generates MCP server configuration JSON, resolves authentication setup, and validates server connectivity for dbt. Use when setting up, configuring, or troubleshooting the dbt MCP server for AI tools like Kilo, Cursor, VS Code, or Claude Desktop.
+ user-invocable: false
+ metadata:
+   author: dbt-labs
+@@ -21,12 +21,12 @@
+     q1 -->|consumption only,<br>no local install| remote[Remote Server<br>HTTP endpoint]
+     local --> q2{Which client?}
+     remote --> q2
++    q2 --> kilo[Kilo]
+     q2 --> claude_desktop[Claude Desktop]
+-    q2 --> claude_code[Claude Code]
+     q2 --> cursor[Cursor]
+     q2 --> vscode[VS Code]
+-    claude_desktop --> config[Generate config<br>+ test setup]
+-    claude_code --> config
++    kilo --> config[Generate config<br>+ test setup]
++    claude_desktop --> config
+     cursor --> config
+     vscode --> config
+ ```
+@@ -46,8 +46,8 @@
+ 
+ ### 2. MCP Client
+ **Ask:** "Which MCP client are you using?"
++- Kilo (CLI or VS Code extension)
+ - Claude Desktop
+-- Claude Code (CLI)
+ - Cursor
+ - VS Code
+ 
 @@ -145,9 +145,9 @@
        "args": ["dbt-mcp"],
        "env": {
@@ -142,17 +176,61 @@ diff -ruN a/dbt/skills/configuring-dbt-mcp-server/SKILL.md b/dbt/skills/configur
    }
  }
  ```
-@@ -243,7 +243,7 @@
- Edit `~/.claude.json` (user scope) or create `.mcp.json` (project scope) in your project root:
+@@ -224,30 +224,34 @@
+ - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+ - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
  
- - `~/.claude.json`: Global across all projects
+-### Claude Code (CLI)
+-Run:
+-```bash
+-claude mcp add dbt -s user -- uvx dbt-mcp
+-```
+-This adds the server to your user scope/config (on this system: `~/.claude.json`).
++### Kilo
+ 
+-For a project-specific setup, run:
+-```bash
+-claude mcp add dbt -s project -- uvx dbt-mcp
+-```
+-This adds the server to `.mcp.json` in your project root.
++Add the `mcp` block to your `kilo.json` config file.
+ 
+-Alternatively, you can use the manual configuration below.
++**Config locations:**
++- **Global:** `~/.config/kilo/kilo.json`
++- **Project:** `./kilo.json` or `./.kilo/kilo.json` in your project root
+ 
+-**Manual configuration:**
+-Edit `~/.claude.json` (user scope) or create `.mcp.json` (project scope) in your project root:
++Project-level configuration takes precedence over global settings. For project-specific dbt setups, use `.kilo/kilo.json` so your team shares the same configuration.
+ 
+-- `~/.claude.json`: Global across all projects
 -- `.mcp.json`: Project-specific, can be committed to version control for team sharing. If using token auth, use environment variable references — never commit literal tokens.
-+- `.mcp.json`: Project-specific, committed to version control for team sharing
++Add the dbt MCP server under the `mcp` key:
  
- For project-specific dbt setups, use `.mcp.json` so your team shares the same configuration.
+-For project-specific dbt setups, use `.mcp.json` so your team shares the same configuration.
++```json
++{
++  "mcp": {
++    "dbt": {
++      "command": "uvx",
++      "args": ["dbt-mcp"],
++      "env": {
++        "DBT_PROJECT_DIR": "/path/to/project",
++        "DBT_PATH": "/path/to/dbt"
++      }
++    }
++  }
++}
++```
  
+-Once the config is created, make sure to add the JSON configuration under the `mcpServers` key.
++**VS Code Extension:** Open Kilo Settings > Agent Behaviour > MCP Servers, then click "Edit Global MCP" (or "Edit Project MCP" for project-specific config) and add the config above.
+ 
+ ### Cursor
+ 1. Open **Cursor menu** → **Settings** → **Cursor Settings** → **MCP**
 diff -ruN a/dbt/skills/troubleshooting-dbt-job-errors/SKILL.md b/dbt/skills/troubleshooting-dbt-job-errors/SKILL.md
---- a/dbt/skills/troubleshooting-dbt-job-errors/SKILL.md	2026-04-07 14:51:44
+--- a/dbt/skills/troubleshooting-dbt-job-errors/SKILL.md	2026-04-07 15:48:28
 +++ b/dbt/skills/troubleshooting-dbt-job-errors/SKILL.md	2026-03-23 10:36:55
 @@ -252,10 +252,9 @@
  
@@ -167,7 +245,7 @@ diff -ruN a/dbt/skills/troubleshooting-dbt-job-errors/SKILL.md b/dbt/skills/trou
  
  ## Common Mistakes
 diff -ruN a/dbt/skills/using-dbt-for-analytics-engineering/SKILL.md b/dbt/skills/using-dbt-for-analytics-engineering/SKILL.md
---- a/dbt/skills/using-dbt-for-analytics-engineering/SKILL.md	2026-04-07 14:51:44
+--- a/dbt/skills/using-dbt-for-analytics-engineering/SKILL.md	2026-04-07 15:48:28
 +++ b/dbt/skills/using-dbt-for-analytics-engineering/SKILL.md	2026-03-23 10:36:55
 @@ -69,12 +69,11 @@
  
@@ -184,7 +262,7 @@ diff -ruN a/dbt/skills/using-dbt-for-analytics-engineering/SKILL.md b/dbt/skills
  ## Cost management best practices
  
 diff -ruN a/dbt/skills/using-dbt-for-analytics-engineering/references/managing-packages.md b/dbt/skills/using-dbt-for-analytics-engineering/references/managing-packages.md
---- a/dbt/skills/using-dbt-for-analytics-engineering/references/managing-packages.md	2026-04-07 14:51:44
+--- a/dbt/skills/using-dbt-for-analytics-engineering/references/managing-packages.md	2026-04-07 15:48:28
 +++ b/dbt/skills/using-dbt-for-analytics-engineering/references/managing-packages.md	2026-03-23 10:36:55
 @@ -13,14 +13,14 @@
  
@@ -204,7 +282,7 @@ diff -ruN a/dbt/skills/using-dbt-for-analytics-engineering/references/managing-p
  ### Version Boundaries
  
 diff -ruN a/dbt/skills/working-with-dbt-mesh/SKILL.md b/dbt/skills/working-with-dbt-mesh/SKILL.md
---- a/dbt/skills/working-with-dbt-mesh/SKILL.md	2026-04-07 14:51:44
+--- a/dbt/skills/working-with-dbt-mesh/SKILL.md	2026-04-07 15:48:28
 +++ b/dbt/skills/working-with-dbt-mesh/SKILL.md	1970-01-01 01:00:00
 @@ -1,236 +0,0 @@
 ----
@@ -444,7 +522,7 @@ diff -ruN a/dbt/skills/working-with-dbt-mesh/SKILL.md b/dbt/skills/working-with-
 -| Setting up cross-project refs without confirming dbt Cloud Enterprise | Cross-project `ref()` is unavailable on lower plan tiers | Confirm the plan level before adding `projects:` to `dependencies.yml` or writing two-argument `ref()` calls |
 -| Adding `dependencies.yml` without a successful upstream production job | dbt Cloud resolves cross-project refs via the upstream `manifest.json` — no job run means no manifest | Run at least one successful production deployment in the upstream project first |
 diff -ruN a/dbt/skills/working-with-dbt-mesh/references/cross-project-collaboration.md b/dbt/skills/working-with-dbt-mesh/references/cross-project-collaboration.md
---- a/dbt/skills/working-with-dbt-mesh/references/cross-project-collaboration.md	2026-04-07 14:51:44
+--- a/dbt/skills/working-with-dbt-mesh/references/cross-project-collaboration.md	2026-04-07 15:48:28
 +++ b/dbt/skills/working-with-dbt-mesh/references/cross-project-collaboration.md	1970-01-01 01:00:00
 @@ -1,174 +0,0 @@
 -# Cross-Project Collaboration
@@ -622,7 +700,7 @@ diff -ruN a/dbt/skills/working-with-dbt-mesh/references/cross-project-collaborat
 -| Using `packages.yml` instead of `dependencies.yml` for project deps | Cross-project refs use `dependencies.yml`, not `packages.yml` |
 -| Forgetting to set up job completion triggers | Without orchestration, downstream may build against stale upstream data |
 diff -ruN a/dbt/skills/working-with-dbt-mesh/references/groups-and-access.md b/dbt/skills/working-with-dbt-mesh/references/groups-and-access.md
---- a/dbt/skills/working-with-dbt-mesh/references/groups-and-access.md	2026-04-07 14:51:44
+--- a/dbt/skills/working-with-dbt-mesh/references/groups-and-access.md	2026-04-07 15:48:28
 +++ b/dbt/skills/working-with-dbt-mesh/references/groups-and-access.md	1970-01-01 01:00:00
 @@ -1,197 +0,0 @@
 -# Groups and Access Modifiers
@@ -823,7 +901,7 @@ diff -ruN a/dbt/skills/working-with-dbt-mesh/references/groups-and-access.md b/d
 -| Expecting `access` to control database permissions | Access modifiers are a dbt concept — manage database permissions separately |
 -| Placing `access` or `group` as top-level model properties in YAML | Nest under `config:` — top-level placement breaks Fusion |
 diff -ruN a/dbt/skills/working-with-dbt-mesh/references/model-contracts.md b/dbt/skills/working-with-dbt-mesh/references/model-contracts.md
---- a/dbt/skills/working-with-dbt-mesh/references/model-contracts.md	2026-04-07 14:51:44
+--- a/dbt/skills/working-with-dbt-mesh/references/model-contracts.md	2026-04-07 15:48:28
 +++ b/dbt/skills/working-with-dbt-mesh/references/model-contracts.md	1970-01-01 01:00:00
 @@ -1,154 +0,0 @@
 -# Model Contracts
@@ -981,7 +1059,7 @@ diff -ruN a/dbt/skills/working-with-dbt-mesh/references/model-contracts.md b/dbt
 -| Adding a contract to a model with dynamic/pivot columns | The column list changes with data, breaking the contract |
 -| Adding a contract without asking about external consumers | Ask who depends on this model's schema before adding a contract |
 diff -ruN a/dbt/skills/working-with-dbt-mesh/references/model-versions.md b/dbt/skills/working-with-dbt-mesh/references/model-versions.md
---- a/dbt/skills/working-with-dbt-mesh/references/model-versions.md	2026-04-07 14:51:44
+--- a/dbt/skills/working-with-dbt-mesh/references/model-versions.md	2026-04-07 15:48:28
 +++ b/dbt/skills/working-with-dbt-mesh/references/model-versions.md	1970-01-01 01:00:00
 @@ -1,185 +0,0 @@
 -# Model Versions
