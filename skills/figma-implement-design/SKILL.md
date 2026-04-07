@@ -41,6 +41,33 @@ This skill provides a structured workflow for translating Figma designs into pro
 
 **Follow these steps in order. Do not skip steps.**
 
+### Step 0: Set up Figma MCP (if not already configured)
+
+If any MCP call fails because Figma MCP is not connected, pause and help the user set it up.
+
+The Figma MCP server runs locally via the Figma Desktop app. Ensure the Figma Desktop app is running, then add the Figma Desktop MCP server to your config:
+
+```json
+{
+  "mcp": {
+    "Figma Desktop": {
+      "type": "remote",
+      "url": "http://127.0.0.1:3845/mcp"
+    }
+  }
+}
+```
+
+**VS Code Extension:** Open Kilo Code Settings > Agent Behaviour > MCP Servers, then click "Edit Global MCP" (or "Edit Project MCP" for project-specific config) and add the config above.
+
+**CLI:** Add the `mcp` block to your `kilo.json` config file. Config locations:
+- **Global:** `~/.config/kilo/kilo.json`
+- **Project:** `./kilo.json` or `./.kilo/kilo.json` in your project root
+
+Project-level configuration takes precedence over global settings.
+
+After adding the server, restart Kilo Code so it can connect to the Figma MCP server, then continue with Step 1.
+
 ### Step 1: Get Node ID
 
 #### Option A: Parse from Figma URL
