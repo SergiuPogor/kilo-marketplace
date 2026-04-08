@@ -1,12 +1,12 @@
 diff -ruN a/content-research-writer/SKILL.md b/content-research-writer/SKILL.md
---- a/content-research-writer/SKILL.md	2026-03-16 12:13:58
-+++ b/content-research-writer/SKILL.md	2026-03-16 11:26:25
+--- a/content-research-writer/SKILL.md	2026-04-07 14:51:41
++++ b/content-research-writer/SKILL.md	2026-04-07 14:51:34
 @@ -52,7 +52,7 @@
  touch article-draft.md
  ```
  
 -Open Claude Code from this directory and start writing.
-+Open Kilo Code from this directory and start writing.
++Open Kilo from this directory and start writing.
  
  ### Basic Workflow
  

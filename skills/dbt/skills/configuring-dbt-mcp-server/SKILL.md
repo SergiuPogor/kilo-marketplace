@@ -1,6 +1,6 @@
 ---
 name: configuring-dbt-mcp-server
-description: Generates MCP server configuration JSON, resolves authentication setup, and validates server connectivity for dbt. Use when setting up, configuring, or troubleshooting the dbt MCP server for AI tools like Claude Desktop, Claude Code, Cursor, or VS Code.
+description: Generates MCP server configuration JSON, resolves authentication setup, and validates server connectivity for dbt. Use when setting up, configuring, or troubleshooting the dbt MCP server for AI tools like Kilo, Cursor, VS Code, or Claude Desktop.
 user-invocable: false
 metadata:
   author: dbt-labs
@@ -21,12 +21,12 @@ flowchart TB
     q1 -->|consumption only,<br>no local install| remote[Remote Server<br>HTTP endpoint]
     local --> q2{Which client?}
     remote --> q2
+    q2 --> kilo[Kilo]
     q2 --> claude_desktop[Claude Desktop]
-    q2 --> claude_code[Claude Code]
     q2 --> cursor[Cursor]
     q2 --> vscode[VS Code]
-    claude_desktop --> config[Generate config<br>+ test setup]
-    claude_code --> config
+    kilo --> config[Generate config<br>+ test setup]
+    claude_desktop --> config
     cursor --> config
     vscode --> config
 ```
@@ -46,8 +46,8 @@ flowchart TB
 
 ### 2. MCP Client
 **Ask:** "Which MCP client are you using?"
+- Kilo (CLI or VS Code extension)
 - Claude Desktop
-- Claude Code (CLI)
 - Cursor
 - VS Code
 
@@ -224,30 +224,34 @@ DBT_PATH=/path/to/dbt
 - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
-### Claude Code (CLI)
-Run:
-```bash
-claude mcp add dbt -s user -- uvx dbt-mcp
+### Kilo
+
+Add the `mcp` block to your `kilo.json` config file.
+
+**Config locations:**
+- **Global:** `~/.config/kilo/kilo.json`
+- **Project:** `./kilo.json` or `./.kilo/kilo.json` in your project root
+
+Project-level configuration takes precedence over global settings. For project-specific dbt setups, use `.kilo/kilo.json` so your team shares the same configuration.
+
+Add the dbt MCP server under the `mcp` key:
+
+```json
+{
+  "mcp": {
+    "dbt": {
+      "command": "uvx",
+      "args": ["dbt-mcp"],
+      "env": {
+        "DBT_PROJECT_DIR": "/path/to/project",
+        "DBT_PATH": "/path/to/dbt"
+      }
+    }
+  }
+}
 ```
-This adds the server to your user scope/config (on this system: `~/.claude.json`).
 
-For a project-specific setup, run:
-```bash
-claude mcp add dbt -s project -- uvx dbt-mcp
-```
-This adds the server to `.mcp.json` in your project root.
-
-Alternatively, you can use the manual configuration below.
-
-**Manual configuration:**
-Edit `~/.claude.json` (user scope) or create `.mcp.json` (project scope) in your project root:
-
-- `~/.claude.json`: Global across all projects
-- `.mcp.json`: Project-specific, committed to version control for team sharing
-
-For project-specific dbt setups, use `.mcp.json` so your team shares the same configuration.
-
-Once the config is created, make sure to add the JSON configuration under the `mcpServers` key.
+**VS Code Extension:** Open Kilo Settings > Agent Behaviour > MCP Servers, then click "Edit Global MCP" (or "Edit Project MCP" for project-specific config) and add the config above.
 
 ### Cursor
 1. Open **Cursor menu** → **Settings** → **Cursor Settings** → **MCP**

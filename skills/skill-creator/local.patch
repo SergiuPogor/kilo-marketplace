@@ -1,6 +1,6 @@
 diff -ruN a/skill-creator/SKILL.md b/skill-creator/SKILL.md
---- a/skill-creator/SKILL.md	2026-03-16 12:13:58
-+++ b/skill-creator/SKILL.md	2026-03-16 11:26:25
+--- a/skill-creator/SKILL.md	2026-04-07 14:51:41
++++ b/skill-creator/SKILL.md	2026-04-07 14:50:09
 @@ -2,7 +2,7 @@
  name: skill-creator
  description: >-
@@ -93,8 +93,8 @@ diff -ruN a/skill-creator/SKILL.md b/skill-creator/SKILL.md
  ### Step 5: Packaging a Skill
  
 diff -ruN a/skill-creator/scripts/init_skill.py b/skill-creator/scripts/init_skill.py
---- a/skill-creator/scripts/init_skill.py	2026-03-16 12:13:58
-+++ b/skill-creator/scripts/init_skill.py	2026-03-16 11:26:25
+--- a/skill-creator/scripts/init_skill.py	2026-04-07 14:51:41
++++ b/skill-creator/scripts/init_skill.py	2026-04-07 14:50:09
 @@ -75,20 +75,20 @@
  
  **Appropriate for:** Python scripts, shell scripts, or any executable code that performs automation, data processing, or specific operations.
@@ -120,3 +120,12 @@ diff -ruN a/skill-creator/scripts/init_skill.py b/skill-creator/scripts/init_ski
  
  **Examples from other skills:**
  - Brand styling: PowerPoint template files (.pptx), logo files
+@@ -165,7 +165,7 @@
+ Replace with actual asset files (templates, images, fonts, etc.) or delete if not needed.
+ 
+ Asset files are NOT intended to be loaded into context, but rather used within
+-the output Claude produces.
++the output the agent produces.
+ 
+ Example asset files from other skills:
+ - Brand guidelines: logo.png, slides_template.pptx

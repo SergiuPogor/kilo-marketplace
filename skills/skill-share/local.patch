@@ -1,6 +1,6 @@
 diff -ruN a/skill-share/SKILL.md b/skill-share/SKILL.md
---- a/skill-share/SKILL.md	2026-03-16 12:13:58
-+++ b/skill-share/SKILL.md	2026-03-16 11:26:25
+--- a/skill-share/SKILL.md	2026-04-07 14:51:41
++++ b/skill-share/SKILL.md	2026-04-07 14:51:24
 @@ -1,7 +1,7 @@
  ---
  name: skill-share
@@ -24,7 +24,7 @@ diff -ruN a/skill-share/SKILL.md b/skill-share/SKILL.md
  
  ```
 -When you ask Claude to create a skill called "pdf-analyzer":
-+When you ask Kilo Code to create a skill called "pdf-analyzer":
++When you ask Kilo to create a skill called "pdf-analyzer":
  1. Creates /skill-pdf-analyzer/ with SKILL.md template
  2. Generates structured directories (scripts/, references/, assets/)
  3. Validates the skill structure

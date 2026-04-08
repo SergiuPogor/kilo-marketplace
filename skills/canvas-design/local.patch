@@ -1,6 +1,6 @@
 diff -ruN a/canvas-design/SKILL.md b/canvas-design/SKILL.md
---- a/canvas-design/SKILL.md	2026-03-16 12:13:58
-+++ b/canvas-design/SKILL.md	2026-03-16 11:26:25
+--- a/canvas-design/SKILL.md	2026-04-07 14:51:41
++++ b/canvas-design/SKILL.md	2026-04-07 14:50:09
 @@ -56,7 +56,7 @@
  **CRITICAL GUIDELINES:**
  - **Avoid redundancy**: Each design aspect should be mentioned once. Avoid repeating points about color theory, spatial relationships, or typographic principles unless adding new depth.
